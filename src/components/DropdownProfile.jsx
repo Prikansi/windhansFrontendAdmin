@@ -24,6 +24,14 @@ function DropdownProfile({
     return () => document.removeEventListener('click', clickHandler);
   });
 
+  const logout = () => {
+    Cookies.remove("token");
+    console.log(ThermometerSnowflakeIcon,"Logged out successfully");
+    
+    router.push("/");
+  };
+
+
   // close if the esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }) => {
@@ -84,11 +92,15 @@ function DropdownProfile({
             <li>
               <Link
                 className="font-medium text-sm text-violet-500 hover:text-violet-600 dark:hover:text-violet-400 flex items-center py-1 px-3"
-                to="/signin"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                to="/"
+                onClick={() => {
+                  logout();  // Call the logout function
+                  setDropdownOpen(false);  // Optionally, close the dropdown after logout
+                }}
               >
-                Sign Out
+                Log Out
               </Link>
+
             </li>
           </ul>
         </div>
