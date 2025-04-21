@@ -18,7 +18,7 @@ import Careerwrap from './partials/Career/Careerwrap';
 import JobApplywrap from './partials/jobApply/jobApplywrap';
 
 import Loginwrap from './partials/Authentication/Loginwrap';
-import Login from './partials/Authentication/Login';
+//import Login from './partials/Authentication/Login';
 import Contactwrap from './partials/Contact/Contactwrap';
 import ConsultWrap from './partials/Consult/ConsultWrap';
 import SolutionListwrap from './partials/SolutionList/SolutionListwrap';
@@ -38,7 +38,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<Loginwrap />} />
         <Route exact path="/blog" element={<Blogwrap />} />
         <Route exact path="/team" element={<Teamwrap />} />
         <Route exact path="/career" element={<Careerwrap />} />
